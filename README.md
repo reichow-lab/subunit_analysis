@@ -128,7 +128,7 @@ The HC1_particles.csv and HC2_particles.csv files can be used with the Subunit_S
 
 Using the Hemichannel_Arrangement.sh script
 
-This script only works for hemichannel metadata. Use the Gap_Junction_Splitter.sh script HC1_particles.csv and HC2_particles.csv output for this script
+This script only works for hemichannel metadata. Use the Gap_Junction_Splitter.sh's script HC1_particles.csv and HC2_particles.csv output for this script
 
 This script takes much longer to run than the other scripts
 
