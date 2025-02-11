@@ -56,13 +56,15 @@ Crtl + d
 
 #example lines of properly formatted .csv file
 ```
+#1,2,3
 $562587597795685328,6,1954348058698591563
 $886761612450511318,8,1954348058698591563
 $381211677249440013,9,1954348058698591563
 $3163205268768835278,11,1954348058698591563
 $11953291252703823103,1,3473960013799703934
 ```
-#It is essential to confirm that the .csv file is properly formatted before continuing by visually inspecting the file
+#It is essential to confirm that the .csv file is properly formatted before continuing by visually inspecting the file, the first line of the .csv file may need to be deleted if it has no relevant metadate (e.g., 1,2,3) like the example does 
+
 #.csv files of classes of similar states can be combined using concatenate commands at this point if necessary
 ```
 cat class1_state_of_interest.csv class2_state_of_interest.csv > combined_classes.csv
