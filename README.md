@@ -14,29 +14,29 @@
 ```
 uid, sym_expand/idx, sym_expand/src_uid
 ```
-#load CryoSPARC’s interactive python shell
+#Load CryoSPARC’s interactive python shell
 ```
 cryosparcm icli
 ```
-#import numpy
+#Import numpy
 ```
 import numpy as n
 ```
-#import pandas
+#Import pandas
 ```
 import pandas as pd
 ```
-#naviagate to the directory with the .cs file of interest and load the .cs file
+#Naviagate to the directory with the .cs file of interest and load the .cs file
 ```
 v = n.load('your_cryosparc_file.cs')
 ```
-#reshape columns of interest and give them identifiable names
+#Reshape columns of interest and give them identifiable names
 ```
 uid = v['uid'].reshape(-1,1)
 idx = v['sym_expand/idx'].reshape(-1,1)
 src_uid = v['sym_expand/src_uid'].reshape(-1,1)
  ```
-#combine the columns
+#Combine the columns
 ```
 combined_all_classes = n.concatenate((uid, idx, src_uid), 1)
 ```
@@ -44,17 +44,17 @@ combined_all_classes = n.concatenate((uid, idx, src_uid), 1)
 ```
 df = pd.DataFrame(combined_all_classes)
 ```
-#convert DataFrame to csv file type
+#Convert DataFrame to csv file type
 ```
 df.to_csv('/full/direct/path/to/where/you/want/the/csv_file.csv', index=False)
 ```
-#exit the cryosparc python shell
+#Exit the cryosparc python shell
 ```
 Crtl + d
 ```
 #By the end of this step a properly formatted .csv file should have been generated containing all the extracted metadata from the particles in the .cs file.
 
-#example lines of properly formatted .csv file
+#Example lines of properly formatted .csv file
 ```
 #1,2,3
 $562587597795685328,6,1954348058698591563
@@ -76,7 +76,7 @@ cat class1_state_of_interest.csv class2_state_of_interest.csv > combined_classes
 #Using the Subunit_State_Frequency.sh script
 #this script works on both gap junction and hemichannel (see below) .csv files
 
-#load the script
+#Load the script
 ```
 ./ Subunit_State_Frequency.sh
 ```
@@ -109,7 +109,7 @@ $ 21736 9
 #Using the Gap_Junction_Splitter.sh script
 #This script is given the initial .csv file generated above and splits the gap junction metadata into hemichannels using their sym_expand/idx ID. 
 
-#load the script
+#Load the script
 ```
 ./Gap_Junction_Splitter.sh
 ```
@@ -128,7 +128,7 @@ $ 21736 9
 #This script only works for hemichannel metadata. Use the Gap_Junction_Splitter.sh script HC1_particles.csv and HC2_particles.csv output for this script
 #This script takes much longer to run than the other scripts
 
-#load the script
+#Load the script
 ```
 $./ Hemichannel_Arrangement.sh
 ```
