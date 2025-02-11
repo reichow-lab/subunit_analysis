@@ -45,12 +45,13 @@ $Crtl + d
 #By the end of this step a properly formatted .csv file should have been generated containing all the extracted metadata from the particles in the .cs file.
 
 #example lines of properly formatted .csv file
-/n562587597795685328,6,1954348058698591563
-/n886761612450511318,8,1954348058698591563
-/n381211677249440013,9,1954348058698591563
-/n3163205268768835278,11,1954348058698591563
-/n11953291252703823103,1,3473960013799703934
-
+```
+$562587597795685328,6,1954348058698591563
+$886761612450511318,8,1954348058698591563
+$381211677249440013,9,1954348058698591563
+$3163205268768835278,11,1954348058698591563
+$11953291252703823103,1,3473960013799703934
+```
 #It is essential to confirm that the .csv file is properly formatted before continuing by visually inspecting the file
 #.csv files of classes of similar states can be combined using concatenate commands at this point if necessary
 $ cat class1_state_of_interest.csv class2_state_of_interest.csv > combined_classes.csv
@@ -68,19 +69,22 @@ $./ Subunit_State_Frequency.sh
 #Give it the path to a .csv file of interest
 
 #Check the frequency_results.csv file for the results
+
 #Example results below; column 1 = number of occurrences and column 2 = number of subunits in the same gap junction or hemichannel
-/n    15 1
-/n 14765 10
-/n  6269 11
-/n  1312 12
-/n    63 2
-/n   407 3
-/n  1549 4
-/n  4411 5
-/n 10023 6
-/n 17053 7
-/n 22406 8
-/n 21736 9
+```
+$    15 1
+$ 14765 10
+$  6269 11
+$  1312 12
+$    63 2
+$   407 3
+$  1549 4
+$  4411 5
+$ 10023 6
+$ 17053 7
+$ 22406 8
+$ 21736 9
+```
 
 #In the example above, 6269 parent gap junction particles have 11 copies of the input state monomer particle in them.
 
@@ -97,6 +101,7 @@ $./Gap_Junction_Splitter.sh
 #Give it the path to a .csv file of interest
 
 #The script should output two new .csv files containing the input gap junctions metadata split into its respective hemichannels named HC1_particles.csv and HC2_particles.csv
+
 #The HC1_particles.csv and HC2_particles.csv files can be used with the Subunit_State_Frequency.sh and Hemichannel_Arrangement.sh scripts
 
 
