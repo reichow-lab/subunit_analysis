@@ -11,37 +11,47 @@
 
 
 #Generating the initial .csv file containing metadata in columns in the following order
-#uid, sym_expand/idx, sym_expand/src_uid
-
+```
+uid, sym_expand/idx, sym_expand/src_uid
+```
 #load CryoSPARC’s interactive python shell
+```
 cryosparcm icli
-
+```
 #import numpy
-$import numpy as n
-
+```
+import numpy as n
+```
 #import pandas
-$import pandas as pd
-
+```
+import pandas as pd
+```
 #naviagate to the directory with the .cs file of interest and load the .cs file
-$v = n.load('your_cryosparc_file.cs')
-
+```
+v = n.load('your_cryosparc_file.cs')
+```
 #reshape columns of interest and give them identifiable names
-$uid = v['uid'].reshape(-1,1)
-$idx = v['sym_expand/idx'].reshape(-1,1)
-$src_uid = v['sym_expand/src_uid'].reshape(-1,1)
- 
+```
+uid = v['uid'].reshape(-1,1)
+idx = v['sym_expand/idx'].reshape(-1,1)
+src_uid = v['sym_expand/src_uid'].reshape(-1,1)
+ ```
 #combine the columns
+```
 combined_all_classes = n.concatenate((uid, idx, src_uid), 1)
-
+```
 #convert numpy array to panda DataFrame
+```
 df = pd.DataFrame(combined_all_classes)
-
+```
 #convert DataFrame to csv file type
+```
 df.to_csv('/full/direct/path/to/where/you/want/the/csv_file.csv', index=False)
-
+```
 #exit the cryosparc python shell
-$Crtl + d
-
+```
+Crtl + d
+```
 #By the end of this step a properly formatted .csv file should have been generated containing all the extracted metadata from the particles in the .cs file.
 
 #example lines of properly formatted .csv file
@@ -54,8 +64,9 @@ $11953291252703823103,1,3473960013799703934
 ```
 #It is essential to confirm that the .csv file is properly formatted before continuing by visually inspecting the file
 #.csv files of classes of similar states can be combined using concatenate commands at this point if necessary
-$ cat class1_state_of_interest.csv class2_state_of_interest.csv > combined_classes.csv
-
+```
+cat class1_state_of_interest.csv class2_state_of_interest.csv > combined_classes.csv
+```
 
 ########################################################################
 
@@ -64,8 +75,9 @@ $ cat class1_state_of_interest.csv class2_state_of_interest.csv > combined_class
 #this script works on both gap junction and hemichannel (see below) .csv files
 
 #load the script
-$./ Subunit_State_Frequency.sh
-
+```
+./ Subunit_State_Frequency.sh
+```
 #Give it the path to a .csv file of interest
 
 #Check the frequency_results.csv file for the results
@@ -96,7 +108,9 @@ $ 21736 9
 #This script is given the initial .csv file generated above and splits the gap junction metadata into hemichannels using their sym_expand/idx ID. 
 
 #load the script
-$./Gap_Junction_Splitter.sh
+```
+./Gap_Junction_Splitter.sh
+```
 
 #Give it the path to a .csv file of interest
 
@@ -113,8 +127,9 @@ $./Gap_Junction_Splitter.sh
 #This script takes much longer to run than the other scripts
 
 #load the script
+```
 $./ Hemichannel_Arrangement.sh
-
+```
 #Give it the path to a .csv file of interest
 
 #The script will report the results
