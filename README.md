@@ -69,18 +69,18 @@ $./ Subunit_State_Frequency.sh
 
 #Check the frequency_results.csv file for the results
 #Example results below; column 1 = number of occurrences and column 2 = number of subunits in the same gap junction or hemichannel
-#    15 1
-# 14756 10
-#  6269 11
-#  1312 12
-#    63 2
-#   407 3
-#  1549 4
-#  4411 5
-# 10023 6
-# 17053 7
-# 22406 8
-# 21736 9
+    15 1
+ 14765 10
+  6269 11
+  1312 12
+    63 2
+   407 3
+  1549 4
+  4411 5
+ 10023 6
+ 17053 7
+ 22406 8
+ 21736 9
 
 #In the example above, 6269 parent gap junction particles have 11 copies of the input state monomer particle in them.
 
