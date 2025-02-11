@@ -79,7 +79,7 @@ This script works on both gap junction and hemichannel (see below) .csv files
 
 Load the script
 ```
-./ Subunit_State_Frequency.sh
+./Subunit_State_Frequency.sh
 ```
 Give it the path to a .csv file of interest
 
@@ -134,7 +134,7 @@ This script takes much longer to run than the other scripts
 
 Load the script
 ```
-$./ Hemichannel_Arrangement.sh
+$./Hemichannel_Arrangement.sh
 ```
 Give it the path to a .csv file of interest
 
