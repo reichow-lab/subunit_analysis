@@ -48,7 +48,7 @@ Step #5: Load the script
 ```
 Step #6: Enter a .csv file of interest
 
-Step #7: Check the frequency_results.csv file for the results
+The script will report the results
 
 Example results below; column 1 = number of occurrences and column 2 = number of subunits in the same gap junction or hemichannel
 ```
@@ -76,12 +76,12 @@ Using the Gap_Junction_Splitter.sh script
 
 This script is given the initial metadata.csv file generated in step #2 and splits the gap junction metadata into hemichannels using their sym_expand/idx ID. 
 
-Step #8 Load the script
+Step #7 Load the script
 ```
 ./Gap_Junction_Splitter.sh
 ```
 
-Step #9: Enter a .csv file of interest
+Step #8: Enter a .csv file of interest
 
 The script should output two new .csv files containing the input gap junctions metadata split into its respective hemichannels named HC1_particles.csv and HC2_particles.csv
 
@@ -97,11 +97,11 @@ This script only works for hemichannel metadata. Use the Gap_Junction_Splitter.s
 
 This script takes much longer to run than the other scripts
 
-Step #10: Load the script
+Step #9: Load the script
 ```
 $./Hemichannel_Arrangement.sh
 ```
-Step #11: Enter HC1_particles.csv or HC2_particles.csv
+Step #10: Enter HC1_particles.csv or HC2_particles.csv
 
 The script will report the results
 
