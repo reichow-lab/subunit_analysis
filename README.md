@@ -99,7 +99,7 @@ This script takes much longer to run than the other scripts
 
 Step #9: Load the script
 ```
-$./Hemichannel_Arrangement.sh
+./Hemichannel_Arrangement.sh
 ```
 Step #10: Enter HC1_particles.csv or HC2_particles.csv
 
