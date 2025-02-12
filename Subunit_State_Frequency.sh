@@ -1,18 +1,17 @@
 #!/bin/bash
 
-#Ask for the CSV file to analyze
-read -e -p "Enter the path to the CSV file: " csv_file
+#1 Ask for the CSV file to analyze
+read -e -p "Enter a .csv file of interest: " csv_file
 
-# Check if the file exists
+#2 Check if the file exists
 if [ ! -f "$csv_file" ]; then
     echo "File does not exist. Exiting."
     exit 1
 fi
 
-# Extract the specified column from the CSV and calculate frequency
-awk -F',' -v col="3" 'NR==1 { print $col } NR>1 { print $col }' "$csv_file" | sort | uniq -c > frequency_analysis.csv
+#3 Extract the specified column from the CSV and calculate frequency (silent processing)
+awk -F',' -v col="3" 'NR>1 { print $col }' "$csv_file" | sort | uniq -c > /dev/null
 
-# Determine the frequency of column 1 from the analysis and sort it
-awk '{ print $1 }' frequency_analysis.csv | sort | uniq -c > frequency_results.csv
-
-echo "Results saved to frequency_results.csv"
+#4 Determine the frequency of column 1 from the analysis, sort it, and print it
+echo -e "\nSubunit Frequency Results:"
+awk -F',' -v col="3" 'NR>1 { print $col }' "$csv_file" | sort | uniq -c | awk '{ print $1 }' | sort | uniq -c
