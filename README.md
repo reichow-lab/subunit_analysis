@@ -11,46 +11,12 @@ The intended input for these scripts is metadata that was extracted from a .cs f
 
 
 Generating the initial .csv file containing metadata in columns in the following order
+
+Navigate to the .cs file that is wanted to be analyzed
+
+Use the Meta_Extraction.py to extract the metadata from the clas of interest
 ```
-uid, sym_expand/idx, sym_expand/src_uid
-```
-Load CryoSPARC’s interactive python shell
-```
-cryosparcm icli
-```
-Import numpy
-```
-import numpy as n
-```
-Import pandas
-```
-import pandas as pd
-```
-Naviagate to the directory with the .cs file of interest and load the .cs file
-```
-v = n.load('your_cryosparc_file.cs')
-```
-Reshape columns of interest and give them identifiable names
-```
-uid = v['uid'].reshape(-1,1)
-idx = v['sym_expand/idx'].reshape(-1,1)
-src_uid = v['sym_expand/src_uid'].reshape(-1,1)
-```
-Combine the columns
-```
-combined_all_classes = n.concatenate((uid, idx, src_uid), 1)
-```
-Convert numpy array to panda DataFrame
-```
-df = pd.DataFrame(combined_all_classes)
-```
-Convert DataFrame to csv file type
-```
-df.to_csv('/full/direct/path/to/where/you/want/the/csv_file.csv', index=False)
-```
-Exit the cryosparc python shell
-```
-Crtl + d
+python3 Metadata_Extraction.py
 ```
 By the end of this step a properly formatted .csv file should have been generated containing all the extracted metadata from the particles in the .cs file.
 
