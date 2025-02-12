@@ -24,5 +24,12 @@ df = pd.DataFrame(combined_all_classes)
 #7 Convert DataFrame to .csv file
 df.to_csv('metadata.csv', index=False)
 
+#8 Remove the first line of the generated metadata.csv file
+with open("metadata.csv", "r") as file:
+    lines = file.readlines()
+
+with open("metadata.csv", "w") as file:
+    file.writelines(lines[1:])
+
 #8 Quit python
 exit()
