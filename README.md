@@ -12,9 +12,9 @@ The intended input for these scripts is metadata that was extracted from a .cs f
 
 Generating the initial .csv file containing metadata in columns in the following order
 
-Navigate to the .cs file that is wanted to be analyzed
+Step # 1: Navigate to the .cs file that is wanted to be analyzed
 
-Use the Meta_Extraction.py to extract the metadata from the clas of interest
+Step # 2: Use the Meta_Extraction.py to extract the metadata from the .cs file from a class of interest and generate a .csv file
 ```
 python3 Metadata_Extraction.py
 ```
@@ -22,16 +22,15 @@ By the end of this step a properly formatted .csv file should have been generate
 
 Example lines of properly formatted .csv file
 ```
-$0,1,2
 $562587597795685328,6,1954348058698591563
 $886761612450511318,8,1954348058698591563
 $381211677249440013,9,1954348058698591563
 $3163205268768835278,11,1954348058698591563
 $11953291252703823103,1,3473960013799703934
 ```
-It is essential to confirm that the .csv file is properly formatted before continuing by visually inspecting the file, the first line of the .csv file may need to be deleted if it has no relevant metadata (e.g., 0,1,2) like the example does 
+Step # 3: It is essential to confirm that the .csv file is properly formatted before continuing by visually inspecting the file. 
 
-.csv files of classes of similar states can be combined using concatenate commands at this point if necessary
+Step # 4: .csv files of classes of similar states can be combined using concatenate commands at this point if necessary
 ```
 cat class1_state_of_interest.csv class2_state_of_interest.csv > combined_classes.csv
 ```
@@ -43,13 +42,13 @@ Using the Subunit_State_Frequency.sh script
 
 This script works on both gap junction and hemichannel (see below) .csv files
 
-Load the script
+Step #5: Load the script
 ```
 ./Subunit_State_Frequency.sh
 ```
-Give it the path to a .csv file of interest
+Step #6: Enter a .csv file of interest
 
-Check the frequency_results.csv file for the results
+Step #7: Check the frequency_results.csv file for the results
 
 Example results below; column 1 = number of occurrences and column 2 = number of subunits in the same gap junction or hemichannel
 ```
@@ -75,14 +74,14 @@ In the example above, 6269 parent gap junction particles have 11 copies of the i
 
 Using the Gap_Junction_Splitter.sh script
 
-This script is given the initial .csv file generated above and splits the gap junction metadata into hemichannels using their sym_expand/idx ID. 
+This script is given the initial metadata.csv file generated in step #2 and splits the gap junction metadata into hemichannels using their sym_expand/idx ID. 
 
-Load the script
+Step #8 Load the script
 ```
 ./Gap_Junction_Splitter.sh
 ```
 
-Give it the path to a .csv file of interest
+Step #9: Enter a .csv file of interest
 
 The script should output two new .csv files containing the input gap junctions metadata split into its respective hemichannels named HC1_particles.csv and HC2_particles.csv
 
@@ -98,11 +97,11 @@ This script only works for hemichannel metadata. Use the Gap_Junction_Splitter.s
 
 This script takes much longer to run than the other scripts
 
-Load the script
+Step #10: Load the script
 ```
 $./Hemichannel_Arrangement.sh
 ```
-Give it the path to a .csv file of interest
+Step #11: Enter HC1_particles.csv or HC2_particles.csv
 
 The script will report the results
 
