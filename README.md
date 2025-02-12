@@ -74,7 +74,7 @@ In the example above, 6269 parent gap junction particles have 11 copies of the i
 
 Using the Gap_Junction_Splitter.sh script
 
-This script is given the initial metadata.csv file generated in step #2 and splits the gap junction metadata into hemichannels using their sym_expand/idx ID. 
+This script is given the initial metadata.csv file generated in step #2 and splits the gap junction metadata into hemichannels using their [sym_expand/idx ID](https://discuss.cryosparc.com/t/how-are-sym-expand-idx-ids-assigned-during-symmetry-expansion/13614/2). 
 
 Step #7 Load the script
 ```
