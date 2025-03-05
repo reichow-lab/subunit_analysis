@@ -12,7 +12,9 @@ The intended input for these scripts is metadata that was extracted from a .cs f
 
 Generating the initial .csv file containing metadata in columns in the following order
 
-Step # 1: Navigate to the .cs file that is wanted to be analyzed
+Step # 1: In cryosparc export the 3D classification job of interest
+
+Step # 1: Navigate to the .cs file that is wanted to be analyzed in the 3D classification directory
 
 Step # 2: Use the Meta_Extraction.py to extract the metadata from the .cs file from a class of interest and generate a .csv file
 ```
