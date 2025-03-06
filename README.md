@@ -12,14 +12,25 @@ The intended input for these scripts is metadata that was extracted from a .cs f
 
 Generating the initial .csv file containing metadata in columns in the following order
 
-Step # 1: In cryosparc export the 3D classification job of interest
+Step # 1: Create a directory for the scripts to live in and to do the dataprocessing
 
-Step # 1: Navigate to the .cs file that is wanted to be analyzed in the 3D classification directory
+Step # 2: Put the scripts into this new directory and give them permissions
+```
+chmod +x script_name.sh
+```
 
-Step # 2: Use the Meta_Extraction.py to extract the metadata from the exported .cs file from a class of interest and generate a .csv file
+Step # 3: Using the cryosparc GUI export the 3D classification job of interest
+
+Step # 4: In a terminal window, navigate to the export directory of your cryosparc project and copy each class's exported .cs file to your script data processing directory created in Step #1. 
+```
+ ../exports/jobs/J335_class_3D/J335_particles_class_1/J335_particles_class_1_exported.cs
+```
+
+Step # 5: Use the Meta_Extraction.py to extract the metadata from the exported .cs file from a class of interest and generate a .csv file
 ```
 python3 Metadata_Extraction.py
 ```
+
 By the end of this step a properly formatted .csv file should have been generated containing all the extracted metadata from the particles in the .cs file.
 
 Example lines of properly formatted .csv file
@@ -30,9 +41,9 @@ $381211677249440013,9,1954348058698591563
 $3163205268768835278,11,1954348058698591563
 $11953291252703823103,1,3473960013799703934
 ```
-Step # 3: It is essential to confirm that the .csv file is properly formatted before continuing by visually inspecting the file. 
+Step # 6: It is essential to confirm that the .csv file is properly formatted before continuing by visually inspecting the file. 
 
-Step # 4: .csv files of classes of similar states can be combined using concatenate commands at this point if necessary
+Step # 7: .csv files of classes of similar states can be combined using concatenate commands at this point if necessary
 ```
 cat class1_state_of_interest.csv class2_state_of_interest.csv > combined_classes.csv
 ```
@@ -44,11 +55,11 @@ Using the Subunit_State_Frequency.sh script
 
 This script works on both gap junction and hemichannel (see below) .csv files
 
-Step #5: Load the script
+Step #8: Load the script
 ```
 ./Subunit_State_Frequency.sh
 ```
-Step #6: Enter a .csv file of interest
+Step #9: Enter a .csv file of interest
 
 The script will report the results
 
@@ -78,12 +89,12 @@ Using the Gap_Junction_Splitter.sh script
 
 This script is given the initial metadata.csv file generated in step #2 and splits the gap junction metadata into hemichannels using their [sym_expand/idx ID](https://discuss.cryosparc.com/t/how-are-sym-expand-idx-ids-assigned-during-symmetry-expansion/13614/2). 
 
-Step #7 Load the script
+Step #10 Load the script
 ```
 ./Gap_Junction_Splitter.sh
 ```
 
-Step #8: Enter a .csv file of interest
+Step #11: Enter a .csv file of interest
 
 The script should output two new .csv files containing the input gap junctions metadata split into its respective hemichannels named HC1_particles.csv and HC2_particles.csv
 
@@ -99,11 +110,11 @@ This script only works for hemichannel metadata. Use the Gap_Junction_Splitter.s
 
 This script takes much longer to run than the other scripts
 
-Step #9: Load the script
+Step #12: Load the script
 ```
 ./Hemichannel_Arrangement.sh
 ```
-Step #10: Enter HC1_particles.csv or HC2_particles.csv
+Step #13: Enter HC1_particles.csv or HC2_particles.csv
 
 The script will report the results
 
