@@ -23,7 +23,7 @@ Step # 3: Using the cryosparc GUI export the 3D classification job of interest
 
 Step # 4: In a terminal window, navigate to the export directory of your cryosparc project and copy each class's exported .cs file to your script data processing directory created in Step #1. 
 ```
- ../exports/jobs/J335_class_3D/J335_particles_class_1/J335_particles_class_1_exported.cs
+ ~/exports/jobs/J335_class_3D/J335_particles_class_1/J335_particles_class_1_exported.cs
 ```
 
 Step # 5: Use the Meta_Extraction.py to extract the metadata from the exported .cs file from a class of interest and generate a .csv file
