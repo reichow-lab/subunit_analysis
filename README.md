@@ -21,7 +21,7 @@ chmod +x script_name.sh
 
 Step # 3: Using the cryosparc GUI export the 3D classification job of interest
 
-Step # 4: In a terminal window, navigate to the export directory of your cryosparc project and copy each class's exported .cs file to your script data processing directory created in Step #1. 
+Step # 4: In a terminal window, copy each class's exported .cs file from the project export directory to your script data processing directory created in Step #1. 
 ```
  ~/exports/jobs/J335_class_3D/J335_particles_class_1/J335_particles_class_1_exported.cs
 ```
@@ -31,7 +31,8 @@ Step # 5: Use the Meta_Extraction.py to extract the metadata from the exported .
 python3 Metadata_Extraction.py
 ```
 
-By the end of this step a properly formatted .csv file should have been generated containing all the extracted metadata from the particles in the .cs file.
+
+By the end of this step a properly formatted metadata.csv file should have been generated containing all the extracted metadata from the particles in the .cs file.
 
 Example lines of properly formatted .csv file
 ```
@@ -41,7 +42,7 @@ $381211677249440013,9,1954348058698591563
 $3163205268768835278,11,1954348058698591563
 $11953291252703823103,1,3473960013799703934
 ```
-Step # 6: It is essential to confirm that the .csv file is properly formatted before continuing by visually inspecting the file. 
+Step # 6: It is essential to confirm that the .csv file is properly formatted before continuing by visually inspecting the file. If doing multiple classes, you will need to rename the metadata.csv file to a unique file name (e.g. J335_class1_metadata.csv)
 
 Step # 7: .csv files of classes of similar states can be combined using concatenate commands at this point if necessary
 ```
