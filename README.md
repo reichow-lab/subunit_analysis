@@ -81,7 +81,9 @@ $ 21736 9
 ```
 
 In the example above, 6269 parent gap junction particles have 11 copies of the input state monomer particle in them.
+
 If that sum product is taken, then the amount of input subunits occupying a gap juction can be determined.
+
 For example, 11 copies in a gap junction * 6269 occurances = 68959 subunits occur 11 times in gap junction particles
 
 
